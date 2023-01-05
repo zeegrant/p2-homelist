@@ -3,4 +3,4 @@ var router = express.Router();
 const appointmentCtrl = require('../controllers/appointment');
 const isLoggedIn = require('..config/auth')
 
-router.get()
+router.get('/appointment/new', isLoggedIn, appointmentCtrl.new)

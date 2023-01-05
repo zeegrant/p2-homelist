@@ -27,10 +27,6 @@ function index(req, res) {
     res.render('/index')
 }
 
-// function show(req, res) {
-//     res.render('/show')
-// }
-
 function showAll(req,res) {
     Home.find({})
       .exec(function (err, homes) {
