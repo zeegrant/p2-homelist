@@ -8,7 +8,8 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var homesRouter = require('./routes/homes');
+// var usersRouter = require('./routes/users');
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
@@ -40,7 +41,8 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/homes', homesRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

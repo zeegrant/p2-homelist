@@ -1,0 +1,26 @@
+
+<p>test</p>
+
+<%= homes %>
+<% homes.forEach(function(h) { %>
+  <div>
+      <p>
+          <%= h.address %>
+      </p>
+      <p>
+          <%= h.bedrooms %>
+      </p>
+      <p>
+          <%= h.bathrooms %>
+      </p>
+      <p>
+          <%= h.squareFootage %>
+      </p>
+      <p>
+          <%= h.price %>
+      </p>
+      <p>
+          <%= h.forSale %>
+      </p>
+  </div>
+<% })%>
