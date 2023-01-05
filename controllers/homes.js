@@ -5,7 +5,8 @@ module.exports = {
     new: newHome,
     create,
     index,
-    showAll
+    showAll,
+    show
 };
 
 function newHome(req, res) {
