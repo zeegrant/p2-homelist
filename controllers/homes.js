@@ -1,11 +1,10 @@
 const Home = require('../models/home');
-const Appointment = require('../models/appointment');
+// const Appointment = require('../models/appointment');
 
 module.exports = {
     new: newHome,
     create,
     index,
-    showAll,
     show
 };
 
@@ -14,23 +13,20 @@ function newHome(req, res) {
 }
 
 function create(req, res) {
-req.body.nowAvailable = !!req.body.nowAvailable;
+req.body.forSale = !!req.body.forSale;
 const home = new Home(req.body);
 home.save(function(err) {
-    if (err) return res.render('home/new');
+    console.log(err)
+    if (err) return res.render('homes/new');
     console.log(home);
-    res.redirect('home/new');
+    res.redirect('homes');
 });
 }
 
-function index(req, res) {
-    res.render('/index')
-}
-
-function showAll(req,res) {
+function index(req,res) {
     Home.find({})
       .exec(function (err, homes) {
-        res.render("homes/showAll", {homes})
+        res.render("homes/index", {homes})
       })
   }
 

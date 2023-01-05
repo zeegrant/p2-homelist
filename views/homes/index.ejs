@@ -1,1 +1,33 @@
-<p>test</p>
+<%- include('../partials/header') %>
+
+<table id="list">
+    <thread>
+        <tr>
+            <th>Address</th>
+            <th>Bedrooms</th>
+            <th>Bathrooms</th>
+            <th>Price</th>
+        </tr>
+    </thread>
+    <tbody>
+        <% homes.forEach(function(h) { %>
+            <tr>
+                <td>
+                    <%= h.address %>
+                </td>
+                <td>
+                    <%= h.bedrooms %>
+                </td>
+                <td>
+                    <%= h.bathrooms %>
+                </td>
+                <td>
+                    <%= h.price %>
+                </td>
+                <td><a href="/homes/<%= h._id %>">Show Details</a></td>
+            </tr>
+            <% }); %>
+    </tbody>
+</table>
+
+<%- include('../partials/footer') %>

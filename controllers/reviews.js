@@ -1,4 +1,4 @@
-const Home = require('../models/home')
+const Home = require('../models/home');
 
 module.exports = {
     create,
@@ -6,7 +6,7 @@ module.exports = {
 }
 
 function create(req, res) {
-    Home.findById(req.params.id, function(err, movie) {
+    Home.findById(req.params.id, function(err, home) {
       
          // Add the user-centric info to req.body (the new review)
          req.body.user = req.user._id;
@@ -17,7 +17,7 @@ function create(req, res) {
         home.reviews.push(req.body)
         // Save any changes made to the movie doc
         home.save(function(err) {
-            res.redirect(`/movies/${movie._id}`)
+            res.redirect(`/homes/${home._id}`)
         })
     })
 }
