@@ -7,6 +7,16 @@ a {
   color: #00B7FF;
 }
 
+body {
+ margin: 0;
+ height: 25vh;
+ display: grid;
+ grid-template-rows: 50px 1fr;
+ grid-template-areas:
+   "nav"
+   "main"
+}
+
 
 .login {
   display: flex;

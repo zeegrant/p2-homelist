@@ -1,0 +1,80 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Address: </div>
+  <div><%= home.address %></div>
+  <div>Bedrooms: </div>
+  <div><%= home.bedrooms %></div>
+  <div>Bathrooms: </div>
+  <div><%= home.bathrooms %></div>
+  <div>Square Footage: </div>
+  <div><%= home.squarefootage %></div>
+  <div>Price: </div>
+  <div><%= home.price %></div>
+  <div>Description: </div>
+  <div><%= home.description %></div>
+  <div>For Sale: </div>
+  <div><%= home.forSale ? 'Yes' : 'Nope' %></div>
+</section>
+<br>
+
+<a href="/homes/<%=home._id %>/edit">Edit Home</a>
+
+<br><br>
+<% if (user) { %>
+<h2>Reviews</h2>
+<form id="add-review-form" method="POST" action="/homes/<%= home._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+<% } %>
+
+<% if (home.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% home.reviews.forEach(function(r) { %>
+        <% total += r.rating %>
+        <tr>
+          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>"><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
+          <td>
+            <% if (user && user._id.equals(r.user)) { %>
+              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="2"></td>
+        <td><strong><%= (total / home.reviews.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>

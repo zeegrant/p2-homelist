@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+    <h1>Edit Home Form</h1>
+    <!-- <h2>Enter a New Home</h2> -->
+    <form id="edit-form" action="/homes/<%= home._id %>?_method=PUT" method="POST">
+      <label>Address:
+        <input type="text" value="<%= home.address %>" name="address">
+      </label><br>
+      <label>Bedrooms:
+        <input type="text" value="<%= home.bedrooms %>" name="bedrooms">
+      </label><br>
+      <label>Bathrooms
+        <select value="<%= home.bathrooms %>" name="bathrooms">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label><br>
+      <label>Sq Ft.
+        <input type="text" value="<%= home.squareFootage %>" name="squareFootage">
+      </label><br>
+      <label>Description:
+        <input type="text" value="<%= home.description %>" name="description">
+      </label><br>
+      <label>Price
+        <input type="text" value="<%= home.price %>" name="price">
+      </label>
+      <label>For Sale:
+        <input type="checkbox" value="<%= home.forSale %>" name="forSale" checked>
+      </label><br>
+      <input type="submit" value="Edit Home">
+    </form>
+    
+    <%- include('../partials/footer') %>

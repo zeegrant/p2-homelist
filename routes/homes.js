@@ -19,4 +19,10 @@ router.get('/:id', homesCtrl.show)
 // POST /homes - add home
 router.post('/', homesCtrl.create)
 
+//PUT/homes - edit a home
+router.put('/:id', isLoggedIn, homesCtrl.update)
+
+router.get('/:id/edit', isLoggedIn, homesCtrl.edit)
+
+
 module.exports = router;

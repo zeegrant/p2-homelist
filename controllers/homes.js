@@ -5,7 +5,9 @@ module.exports = {
     new: newHome,
     create,
     index,
-    show
+    show,
+    update,
+    edit
 };
 
 function newHome(req, res) {
@@ -35,4 +37,18 @@ function index(req,res) {
       .exec((err, home) => {
         res.render("homes/show", {home})
       })
+  }
+
+  function update(req, res) {
+    Home.findByIdAndUpdate(req.params.id, req.body, function(err, home) {
+      if (err || !home) return res.redirect('/homes');
+      res.redirect(`${home._id}`);
+    });
+  }
+  
+  function edit(req, res) {
+    Home.findById(req.params.id, function(err, home) {
+        if (err || !home) return res.redirect('/homes');
+        res.render('homes/edit', {home});
+    });
   }
