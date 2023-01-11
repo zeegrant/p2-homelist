@@ -23,7 +23,6 @@ USER
 * AAU: I can view all homes listed for sale on home page without logging in site.
 * AAU: I can login to add and save individual homes/apartment listings.
 * AAU: I can edit the listing I have added to the site. 
-* AAU: I want to know the Alpha Keys available.
 * AAU: I can leave notes/review on homes toured for other homebuyers/apartment searchers to see.
 * AAU: I can delete my reviews. 
 
