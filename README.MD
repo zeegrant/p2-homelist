@@ -13,19 +13,19 @@ Screenshot
 <img src="https://imagizer.imageshack.com/img923/959/jcfChm.png">
 
 Technologies used: 
-*JavaScript
-*HTML
-*CSS
-*Express
-*Heruku
+* JavaScript
+* HTML
+* CSS
+* Express
+* Heruku
 
 USER
-*AAU: I can view all homes listed for sale on home page without logging in site.
-*AAU: I can login to add and save individual homes/apartment listings.
-*AAU: I can edit the listing I have added to the site. 
-*AAU: I want to know the Alpha Keys available.
-*AAU: I can leave notes/review on homes toured for other homebuyers/apartment searchers to see.
-*AAU: I can delete my reviews. 
+* AAU: I can view all homes listed for sale on home page without logging in site.
+* AAU: I can login to add and save individual homes/apartment listings.
+* AAU: I can edit the listing I have added to the site. 
+* AAU: I want to know the Alpha Keys available.
+* AAU: I can leave notes/review on homes toured for other homebuyers/apartment searchers to see.
+* AAU: I can delete my reviews. 
 
 
 MVP GOALS: 
@@ -35,6 +35,6 @@ MVP GOALS:
 
 
 MAJOR HURDLES: 
-*Ensuring that words were defined correct whether plural or not. 
-*The routes being required correctly.
-*Delete function.
+* Ensuring that words were defined correct whether plural or not. 
+* The routes being required correctly.
+* Delete function.
