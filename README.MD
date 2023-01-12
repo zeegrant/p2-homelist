@@ -1,6 +1,7 @@
 P2-HOMELIST APP
 
 Link for APP: https://github.com/zeegrant/p2-homelist.git
+Planning Link: https://trello.com/b/zZo64W1X/sei-project-2-home-sale-listings
 
 INTRO
 Working in real estate one of the biggest complaints I recieve from renters and buyers is that they seen many properties that were not matching up to the listings and/or pictures. In other words, an illegal tactic was used called bait and switch. In order to prevent the prevelance of this occuring, adding peer reviews to each listing gives the buyers/renters a formal heads-up prior to booking an appointment with the listing agent. It helps to keep the broker community honest, limits wasted time searching for properties that don't fit the criteria and adds a layer of safety.
@@ -37,3 +38,8 @@ MAJOR HURDLES:
 * Ensuring that words were defined correct whether plural or not. 
 * The routes being required correctly.
 * Delete function.
+
+
+NEXT STEPS/ICEBOX: 
+* Add photo functionality 
+* Add abililty to track viewing appointments to homes.
